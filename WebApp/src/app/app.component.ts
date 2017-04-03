@@ -1,7 +1,20 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-  selector: 'my-app',
-  template: `<h1>Hello {{name}}</h1>`,
+    selector: 'app-container',
+    template: `
+  <nav class="clearfix">
+    <div class="container">
+        <a routerLink="/home"><h1 class="logo">Gamify</h1></a>
+        <a routerLink="/home" class="menu-item" routerLinkActive="active">Home</a>
+        <a routerLink="/games" class="menu-item" routerLinkActive="active">Games</a>
+        <a routerLink="/login" class="menu-item right" routerLinkActive="active">Login</a>
+        <a routerLink="/register" class="menu-item right" routerLinkActive="active">Register</a>
+    </div>
+
+  </nav>
+  <router-outlet></router-outlet>
+`,
 })
-export class AppComponent  { name = 'Angular'; }
+export class AppComponent {
+}

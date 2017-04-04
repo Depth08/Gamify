@@ -5,14 +5,21 @@ import {RouterModule, Routes} from '@angular/router';
 import {AppComponent}  from './app.component';
 import {HomeComponent} from './pages/pages.home';
 import {PageNotFoundComponent} from './pages/pages.notfound';
-import {Hero} from "./components/hero";
-import {FeaturesComponent} from "./components/features";
-import {DoormatComponent} from './components/doormat';
+import {HeroComponent} from "./components/hero.component";
+import {FeaturesComponent} from "./components/features.component";
+import {DoormatComponent} from './components/doormat.component';
+import {LoginComponent} from './pages/pages.login';
+import {FormsModule}   from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
-const appRoutes: Routes = [
+const appRoutes:Routes = [
     {
         path: 'home',
         component: HomeComponent
+    },
+    {
+        path: 'login',
+        component: LoginComponent
     },
     {
         path: '',
@@ -28,15 +35,18 @@ const appRoutes: Routes = [
 @NgModule({
     imports: [
         BrowserModule,
-        RouterModule.forRoot(appRoutes)
+        RouterModule.forRoot(appRoutes),
+        FormsModule,
+        HttpModule
     ],
     declarations: [
         AppComponent,
         HomeComponent,
-        Hero,
+        HeroComponent,
         FeaturesComponent,
         PageNotFoundComponent,
-        DoormatComponent
+        DoormatComponent,
+        LoginComponent
     ],
     bootstrap: [AppComponent]
 })

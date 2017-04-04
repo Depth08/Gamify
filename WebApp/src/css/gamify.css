@@ -8,6 +8,18 @@
     font-family: 'Nunito Sans', sans-serif;
 }
 
+html {
+    background-color: #4FB99F;
+}
+
+a {
+    color: #ffab8c;
+}
+
+body {
+    background-color: white;
+}
+
 *::selection {
     background-color: #ED553B;
     color: white;
@@ -20,10 +32,28 @@ body {
 
 .button {
     border: none;
+    transition: all 0.3s ease-in-out;
 }
 
 .bg-green {
     background-color: #4FB99F;
+}
+
+.bg-red {
+    background-color: #ED553B;
+}
+
+input[type="text"],
+input[type="password"] {
+    border-radius: 0;
+    background-color: white;
+    border: 1px solid #eee;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border: 1px solid #eee;
 }
 
 /* Specific */

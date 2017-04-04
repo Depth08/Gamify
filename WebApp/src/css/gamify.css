@@ -67,12 +67,67 @@ nav .menu-item.right {
     background: linear-gradient(to top right, #173f4b, #068587);
 
     width: 100%;
-    height: 45rem;
+    height: 60rem;
     padding: 4rem;
 
     color: white;
+
+    text-align: center;
 }
 
-.hero h1 {
-    text-align: center;
+.hero .subtitle {
+    display: block;
+    width: 100%;
+
+    position: absolute;
+    top: 12rem;
+
+    animation: fadeUp 1s;
+}
+
+.hero .button {
+    position: absolute;
+    transform-origin: 50% 0;
+
+    top: 45rem;
+    left: 40%;
+    width: 20%;
+
+    animation: fadeUp 1s;
+}
+
+@keyframes fadeUp {
+    0% {
+        transform: translateY(13rem);
+        opacity: 0;
+        font-size: 1rem;
+    }
+}
+
+.hero svg {
+    position: absolute;
+    display: block;
+    top: 14rem;
+    width: 50%;
+    left: 25%;
+}
+
+.hero svg .room > * {
+    transition: all 0.3s ease-in-out;
+}
+
+.hero svg g.room:hover > * {
+    transform: translateY(-1rem);
+}
+
+.hero svg .item, .hero svg .shadow {
+    transform-origin: 50% 50%;
+}
+
+.hero svg g.room:hover > .item {
+    transform: scale(1.5) translateY(-0.65rem);
+}
+
+.hero svg g.room:hover > .shadow {
+    transform: scale(1.5) translateY(-0.6rem);
 }

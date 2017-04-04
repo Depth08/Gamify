@@ -6,7 +6,11 @@
 /* Common */
 * {
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 62.5%;
+}
+
+*::selection {
+    background-color: #ED553B;
+    color: white;
 }
 
 body {

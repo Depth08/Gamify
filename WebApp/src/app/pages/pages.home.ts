@@ -5,7 +5,10 @@ import {Component} from '@angular/core';
 
 @Component({
     selector: 'home-page',
-    template: `<hero></hero>`,
+    template: `
+        <hero></hero>
+        <features></features>
+`,
 })
 
 export class HomeComponent {

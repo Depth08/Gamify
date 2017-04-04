@@ -6,6 +6,8 @@ import {AppComponent}  from './app.component';
 import {HomeComponent} from './pages/pages.home';
 import {PageNotFoundComponent} from './pages/pages.notfound';
 import {Hero} from "./components/hero";
+import {FeaturesComponent} from "./components/features";
+import {DoormatComponent} from './components/doormat';
 
 const appRoutes: Routes = [
     {
@@ -32,7 +34,9 @@ const appRoutes: Routes = [
         AppComponent,
         HomeComponent,
         Hero,
-        PageNotFoundComponent
+        FeaturesComponent,
+        PageNotFoundComponent,
+        DoormatComponent
     ],
     bootstrap: [AppComponent]
 })

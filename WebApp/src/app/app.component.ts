@@ -14,6 +14,7 @@ import {Component} from '@angular/core';
 
   </nav>
   <router-outlet></router-outlet>
+  <doormat></doormat>
 `,
 })
 export class AppComponent {

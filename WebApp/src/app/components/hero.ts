@@ -11,7 +11,7 @@ import {Component} from '@angular/core';
         <h1 class="logo-big">Gamify</h1>
         <h2 class="subtitle">Make creative games out of environments</h2>
         
-        <a class="button" href="#" >Start creating</a>
+        <a class="button bg-green" href="#" >Start creating</a>
         
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 300 160" enable-background="new 0 0 300 200" xml:space="preserve">
         <g class="room">

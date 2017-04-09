@@ -21,18 +21,34 @@ import { AuthService } from './../services/auth.service';
         <input name="password" [(ngModel)]="user.password" type="password">
     </form>
     
+    <p [hidden]="!loading">Logging in...</p>
+    
     <button type="button" (click)="login()" class="button bg-red">Login</button>
 </section>`,
     styleUrls: ['app/pages/pages.login.css']
 })
 export class LoginComponent {
     public user: any = {};
+    public loading: Boolean = false;
 
     constructor(private auth: AuthService) {
         this.user = new User();
     }
 
     login(): void {
-        this.auth.login(this.user.email, this.user.password);
+        this.loading = true;
+
+        this.auth.login(this.user.email, this.user.password).subscribe(
+            data => {
+                console.log("You just logged in!", localStorage.getItem('auth_token'));
+
+                this.loading = false;
+            },
+            error => {
+                console.log("The login was unsuccessful");
+
+                this.loading = false;
+            }
+        );
     }
 }

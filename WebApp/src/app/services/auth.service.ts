@@ -13,14 +13,12 @@ export class AuthService {
     private URL: string = 'http://webandmobile.sennevancauwenberge.ikdoeict.net/api/account/login';
 
     constructor(private http: Http) {
-        let token = JSON.parse(localStorage.getItem('auth_token'));
+        let token = localStorage.getItem('auth_token');
 
         this.authToken = token || "";
     }
 
-    login(email: string, password: string): Boolean {
-        console.log('Login', email, password);
-
+    login(email: string, password: string) {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         headers.append('Access-Control-Allow-Origin', '*');
         let body = JSON.stringify({
@@ -28,20 +26,21 @@ export class AuthService {
             password: password
         });
 
-        this.http.post(this.URL, body, { headers: headers } )
+        return this.http.post(this.URL, body, { headers: headers } )
         .map((response: Response) => {
             var validResponse;
-
-            console.log(response);
 
             try {
                 validResponse = response.json();
 
                 localStorage.setItem('auth_token', validResponse.token);
+                return true;
             }
             catch(e) {
                 console.log("Error parsing JSON on login", e);
             }
+
+            return false;
         });
     }
 

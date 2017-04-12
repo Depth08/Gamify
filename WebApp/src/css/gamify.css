@@ -56,6 +56,14 @@ input[type="password"]:focus {
     border: 1px solid #eee;
 }
 
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
 /* Specific */
 
 .logo {

@@ -1,0 +1,79 @@
+.pane {
+    position: absolute;
+    width: 80%;
+    left: 20%;
+    top: 0;
+    padding: 1rem;
+}
+
+.ruleset {
+    float: left;
+
+    width: 30rem;
+    padding: 1rem;
+    margin-right: 1rem;
+    box-sizing: border-box;
+
+    background-color: #1a1a1a;
+
+    border-radius: 2rem;
+}
+
+.ruleset .beacon-icon {
+    width: 25%;
+}
+
+.ruleset .header {
+    border-bottom: 1px solid white;
+
+    color: white;
+    text-align: center;
+
+    margin-bottom: 1rem;
+}
+
+.nodes .node:last-of-type {
+    margin: 0;
+}
+
+.node {
+    padding: 1rem;
+    border-radius: 1rem;
+
+    margin-bottom: 1rem;
+
+    color: white;
+}
+
+.action.node {
+    background-color: #d8475e;
+}
+
+.condition.node {
+    background-color: #179a98;
+}
+
+.add-button {
+    margin-left: calc(50% - 4rem);
+
+    width: 8rem;
+    height: 8rem;
+
+    border: 1px solid white;
+    border-radius: 100%;
+    font-size: 5rem;
+    text-align: center;
+
+    color: white;
+}
+
+.add-container {
+    padding-top: 5rem;
+
+    width: 30rem;
+    border-radius: 1rem;
+    border: 1px dashed white;
+
+    text-align: center;
+    float: left;
+}

@@ -9,8 +9,11 @@ import {HeroComponent} from "./components/hero.component";
 import {FeaturesComponent} from "./components/features.component";
 import {DoormatComponent} from './components/doormat.component';
 import {LoginComponent} from './pages/pages.login';
+import {EditorComponent} from './pages/pages.editor';
 import {FormsModule}   from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import {ToolDrawerComponent} from "./components/editor/components.editor.tooldrawer";
+import {EditorPaneComponent} from "./components/editor/components.editor.editorpane";
 
 const appRoutes:Routes = [
     {
@@ -20,6 +23,10 @@ const appRoutes:Routes = [
     {
         path: 'login',
         component: LoginComponent
+    },
+    {
+        path: 'games/create',
+        component: EditorComponent
     },
     {
         path: '',
@@ -46,7 +53,10 @@ const appRoutes:Routes = [
         FeaturesComponent,
         PageNotFoundComponent,
         DoormatComponent,
-        LoginComponent
+        LoginComponent,
+        EditorComponent,
+        ToolDrawerComponent,
+        EditorPaneComponent
     ],
     bootstrap: [AppComponent]
 })

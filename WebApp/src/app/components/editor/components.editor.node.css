@@ -1,0 +1,30 @@
+:host {
+    display: block;
+    margin: 0;
+    list-style: none;
+
+    border-radius: 5px;
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+
+    font-weight: 700;
+    text-transform: uppercase;
+
+    color: white;
+}
+
+:host(.ui-draggable-dragging) {
+    z-index: 999;
+}
+
+:host(.condition) {
+    background-color: #179a98;
+}
+
+:host(.action) {
+    background-color: #d8475e;
+}
+
+:host:last-of-type {
+    margin-bottom: 0;
+}

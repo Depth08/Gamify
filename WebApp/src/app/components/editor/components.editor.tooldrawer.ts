@@ -9,15 +9,15 @@ import {Component} from '@angular/core';
     <div class="tooldrawer">
         <h2>Conditions</h2>
         <ul class="conditions node-container">
-            <li>Far</li>
-            <li>Near</li>
-            <li>Touching</li>
+            <node class="condition">Far</node>
+            <node class="condition">Near</node>
+            <node class="condition">Touching</node>
         </ul>
         <h2>Actions</h2>
         <ul class="actions node-container">
-            <li>Vibrate</li>
-            <li>Text</li>
-            <li>Pickup</li>
+            <node class="action">Vibrate</node>
+            <node class="action">Text</node>
+            <node class="action">Pickup</node>
         </ul>
     </div>
 `,

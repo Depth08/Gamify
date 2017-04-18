@@ -1,0 +1,43 @@
+:host {
+    float: left;
+
+    width: 30rem;
+    padding: 1rem;
+    margin-right: 1rem;
+    box-sizing: border-box;
+
+    background-color: #1a1a1a;
+
+    border-radius: 2rem;
+}
+
+.beacon-icon {
+    width: 25%;
+}
+
+.header {
+    border-bottom: 1px solid white;
+
+    color: white;
+    text-align: center;
+
+    margin-bottom: 1rem;
+}
+
+.node-placeholder {
+    display: none;
+    margin: 0;
+
+    border-radius: 5px;
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+
+    color: white;
+    opacity: 0.8;
+
+    border: 1px dashed white;
+}

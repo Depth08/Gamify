@@ -14,6 +14,8 @@ import {FormsModule}   from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {ToolDrawerComponent} from "./components/editor/components.editor.tooldrawer";
 import {EditorPaneComponent} from "./components/editor/components.editor.editorpane";
+import {NodeComponent} from "./components/editor/components.editor.node";
+import {BeaconComponent} from "./components/editor/components.editor.beacon";
 
 const appRoutes:Routes = [
     {
@@ -56,7 +58,9 @@ const appRoutes:Routes = [
         LoginComponent,
         EditorComponent,
         ToolDrawerComponent,
-        EditorPaneComponent
+        EditorPaneComponent,
+        NodeComponent,
+        BeaconComponent
     ],
     bootstrap: [AppComponent]
 })

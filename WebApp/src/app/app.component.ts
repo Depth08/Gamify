@@ -11,7 +11,7 @@ import { AuthService } from './services/auth.service';
         <a routerLink="/home" class="menu-item" routerLinkActive="active">Home</a>
         <a routerLink="/games" class="menu-item" routerLinkActive="active">Games</a>
         <a routerLink="/login" *ngIf="!this.auth.isLoggedIn()" class="menu-item right" routerLinkActive="active">Login</a>
-        <a *ngIf="this.auth.isLoggedIn()" (click)="this.auth.logout()" class="menu-item right" routerLinkActive="active">Logout</a>
+        <a routerLink="/home" *ngIf="this.auth.isLoggedIn()" (click)="this.auth.logout()" class="menu-item right">Logout</a>
         <a routerLink="/register" class="menu-item right" routerLinkActive="active">Register</a>
     </div>
 

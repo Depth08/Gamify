@@ -25,29 +25,10 @@
     border-radius: 5px;
 }
 
-.actions.node-container > li {
+.actions.node-container > .node {
     background-color: #d8475e;
 }
 
-.conditions.node-container > li {
+.conditions.node-container > .node {
     background-color: #179a98;
-}
-
-.node-container > li {
-    display: block;
-    margin: 0;
-    list-style: none;
-
-    border-radius: 5px;
-    padding: 0.8rem;
-    margin-bottom: 0.5rem;
-
-    font-weight: 700;
-    text-transform: uppercase;
-
-    color: white;
-}
-
-.node-container > li:last-of-type {
-    margin-bottom: 0;
 }

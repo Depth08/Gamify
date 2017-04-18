@@ -6,6 +6,7 @@ import { Http, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class AuthService {
@@ -18,7 +19,7 @@ export class AuthService {
         this.authToken = token || "";
     }
 
-    login(email: string, password: string) {
+    login(email: string, password: string): Observable<any> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         headers.append('Access-Control-Allow-Origin', '*');
         let body = JSON.stringify({
@@ -30,10 +31,17 @@ export class AuthService {
         .map((response: Response) => {
             var validResponse;
 
+            console.log('map in auth::', response);
+
+            if (response.status == 401) {
+                throw new Error(response._body);
+            }
+
             try {
                 validResponse = response.json();
 
                 localStorage.setItem('auth_token', validResponse.token);
+                this.loggedIn = true;
                 return true;
             }
             catch(e) {
@@ -47,6 +55,10 @@ export class AuthService {
     logout(): void {
         this.authToken = '';
         localStorage.removeItem('auth_token');
+    }
+
+    isLoggedIn(): boolean {
+        return localStorage.getItem('auth_token') != null;
     }
 }
 

@@ -4,6 +4,7 @@
 import { Component } from '@angular/core';
 import { User } from './../models/user';
 import { AuthService } from './../services/auth.service';
+import {RouterModule, Routes} from '@angular/router';
 
 @Component ({
     selector: 'login-page',
@@ -22,6 +23,7 @@ import { AuthService } from './../services/auth.service';
     </form>
     
     <p [hidden]="!loading">Logging in...</p>
+    <p [hidden]="errorMsg.length < 1" class="error">Error: {{errorMsg}}</p>
     
     <button type="button" (click)="login()" class="button bg-red">Login</button>
 </section>`,
@@ -30,8 +32,9 @@ import { AuthService } from './../services/auth.service';
 export class LoginComponent {
     public user: any = {};
     public loading: Boolean = false;
+    public errorMsg: String = "";
 
-    constructor(private auth: AuthService) {
+    constructor(private auth: AuthService, private router: RouterModule) {
         this.user = new User();
     }
 
@@ -42,11 +45,13 @@ export class LoginComponent {
             data => {
                 console.log("You just logged in!", localStorage.getItem('auth_token'));
 
+                this.errorMsg = "";
                 this.loading = false;
             },
             error => {
-                console.log("The login was unsuccessful");
+                console.log(error);
 
+                this.errorMsg = error._body;
                 this.loading = false;
             }
         );

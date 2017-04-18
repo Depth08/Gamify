@@ -28,27 +28,21 @@ export class AuthService {
         });
 
         return this.http.post(this.URL, body, { headers: headers } )
-        .map((response: Response) => {
-            var validResponse;
+            .map((response: Response) => {
+                var validResponse;
 
-            console.log('map in auth::', response);
+                try {
+                    validResponse = response.json();
 
-            if (response.status == 401) {
-                throw new Error('kak');
-            }
+                    localStorage.setItem('auth_token', validResponse.token);
+                    return true;
+                }
+                catch(e) {
+                    console.log("Error parsing JSON on login", e);
+                }
 
-            try {
-                validResponse = response.json();
-
-                localStorage.setItem('auth_token', validResponse.token);
-                return true;
-            }
-            catch(e) {
-                console.log("Error parsing JSON on login", e);
-            }
-
-            return false;
-        });
+                return false;
+            });
     }
 
     logout(): void {

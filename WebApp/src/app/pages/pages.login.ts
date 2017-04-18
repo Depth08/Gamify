@@ -4,7 +4,7 @@
 import { Component } from '@angular/core';
 import { User } from './../models/user';
 import { AuthService } from './../services/auth.service';
-import {RouterModule, Routes} from '@angular/router';
+import {Router} from '@angular/router';
 
 @Component ({
     selector: 'login-page',
@@ -34,7 +34,7 @@ export class LoginComponent {
     public loading: Boolean = false;
     public errorMsg: String = "";
 
-    constructor(private auth: AuthService, private router: RouterModule) {
+    constructor(private auth: AuthService, private router: Router) {
         this.user = new User();
     }
 
@@ -47,11 +47,11 @@ export class LoginComponent {
 
                 this.errorMsg = "";
                 this.loading = false;
+
+                this.router.navigateByUrl('/home');
             },
             error => {
-                console.log(error);
-
-                this.errorMsg = error._body;
+                this.errorMsg = error.json().Message;
                 this.loading = false;
             }
         );

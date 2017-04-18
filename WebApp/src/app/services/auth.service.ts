@@ -34,14 +34,13 @@ export class AuthService {
             console.log('map in auth::', response);
 
             if (response.status == 401) {
-                throw new Error(response._body);
+                throw new Error('kak');
             }
 
             try {
                 validResponse = response.json();
 
                 localStorage.setItem('auth_token', validResponse.token);
-                this.loggedIn = true;
                 return true;
             }
             catch(e) {

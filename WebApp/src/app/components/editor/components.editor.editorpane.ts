@@ -10,7 +10,7 @@ import {Component} from '@angular/core';
     <beacon></beacon>
 
     
-    <div class="add-container">
+    <div style="cursor: pointer" (click)="addBeacon()" class="add-container">
         <p class="add-button">+</p>
         <p>Add new beacon</p>
     </div>
@@ -18,4 +18,10 @@ import {Component} from '@angular/core';
 `,
     styleUrls: ['app/components/editor/components.editor.editorpane.css']
 })
-export class EditorPaneComponent { }
+export class EditorPaneComponent {
+
+
+    addBeacon() {
+        console.log('beacon added');
+    }
+}

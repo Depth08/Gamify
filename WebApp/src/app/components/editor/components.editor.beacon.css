@@ -41,3 +41,23 @@
 
     border: 1px dashed white;
 }
+
+.node {
+    background-color: yellow;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+
+    color: white;
+
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.node:last-of-type {
+    margin-bottom: 0;
+}
+
+.node.condition {
+    background-color: #179a98;
+}

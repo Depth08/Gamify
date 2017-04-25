@@ -1,9 +1,10 @@
 import {Component} from '@angular/core';
 import { AuthService } from './services/auth.service';
+import { GameService } from "./services/game.service";
 
 @Component({
     selector: 'app-container',
-    providers: [AuthService],
+    providers: [AuthService, GameService],
     template: `
   <nav class="clearfix">
     <div class="container">

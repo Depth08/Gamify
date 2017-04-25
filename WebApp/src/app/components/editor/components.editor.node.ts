@@ -16,7 +16,7 @@ export class NodeComponent implements OnInit {
     private isDragged = false;
 
     constructor(private elem: ElementRef) {
-
+        
     }
 
     ngOnInit() {

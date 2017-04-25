@@ -6,6 +6,7 @@ import {Injectable} from '@angular/core'
 
 @Injectable()
 export class GameService {
+    private beacons = [];
     private conditions = [];
     private actions = [];
 

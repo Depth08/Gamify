@@ -1,9 +1,10 @@
 :host {
-    float: left;
+    display: inline-block;
 
     width: 30rem;
     padding: 1rem;
     margin-right: 1rem;
+    margin-bottom: 1rem;
     box-sizing: border-box;
 
     background-color: #1a1a1a;

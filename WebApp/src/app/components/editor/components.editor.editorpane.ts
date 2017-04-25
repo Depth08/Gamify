@@ -7,7 +7,7 @@ import {Component} from '@angular/core';
     selector: 'editor-pane',
     template: `
 <div class="pane clearfix">
-    <beacon></beacon>
+    <beacon *ngFor="let beacon of beacons"></beacon>
 
     
     <div style="cursor: pointer" (click)="addBeacon()" class="add-container">
@@ -19,9 +19,15 @@ import {Component} from '@angular/core';
     styleUrls: ['app/components/editor/components.editor.editorpane.css']
 })
 export class EditorPaneComponent {
-
+    private beacons = [{
+        id: 0
+    }];
 
     addBeacon() {
         console.log('beacon added');
+
+        this.beacons.push({
+            id:0
+        })
     }
 }

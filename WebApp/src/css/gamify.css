@@ -25,6 +25,27 @@ body {
     color: white;
 }
 
+*::-webkit-scrollbar-track {
+    background-color: #312d33;
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    opacity: 0;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #605864;
+    opacity: 0.8;
+}
+
+body::-webkit-scrollbar {
+    width: 0;
+}
+
 body {
     margin: 0;
     padding: 0;

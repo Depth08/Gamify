@@ -6,15 +6,47 @@ import {Injectable} from '@angular/core'
 
 @Injectable()
 export class GameService {
-    private beacons = [];
-    private conditions = [];
-    private actions = [];
+    private name: string;
+    private desc: string;
+    private beacons;
 
-    public getConditions() {
-        return this.conditions;
+    constructor() {
+        this.beacons = [];
     }
 
-    public getActions() {
-        return this.actions;
+    newGame(name, desc): void {
+        this.name = name;
+        this.desc = desc;
+
+        this.beacons = [];
+    }
+
+    getBeacons() {
+        return this.beacons;
+    }
+
+    addBeacon(): void {
+        this.beacons.push({
+            name: 'Give me a cool name :)',
+            tagline: 'Cheesy description here...',
+            interactions: []
+        });
+    }
+
+    // TODO: Text is based upon condition node text and not db
+    addInteraction(id, text): void {
+        this.beacons[id].interactions.push({
+            condition: {
+                name: text
+            },
+            actions: []
+        });
+    }
+
+    // TODO: Text is based upon condition node text and not db
+    addAction(beaconId, interactionId, text): void {
+        this.beacons[beaconId].interactions[interactionId].actions.push({
+            name: text
+        });
     }
 }

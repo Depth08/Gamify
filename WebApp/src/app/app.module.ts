@@ -14,8 +14,10 @@ import {FormsModule}   from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {ToolDrawerComponent} from "./components/editor/components.editor.tooldrawer";
 import {EditorPaneComponent} from "./components/editor/components.editor.editorpane";
-import {NodeComponent} from "./components/editor/components.editor.node";
+import {ConditionNodeComponent} from "./components/editor/components.editor.conditionNode";
+import {ActionNodeComponent} from "./components/editor/components.editor.actionNode";
 import {BeaconComponent} from "./components/editor/components.editor.beacon";
+import {InteractionComponent} from "./components/editor/components.editor.interaction";
 
 const appRoutes:Routes = [
     {
@@ -59,8 +61,10 @@ const appRoutes:Routes = [
         EditorComponent,
         ToolDrawerComponent,
         EditorPaneComponent,
-        NodeComponent,
-        BeaconComponent
+        ConditionNodeComponent,
+        ActionNodeComponent,
+        BeaconComponent,
+        InteractionComponent
     ],
     bootstrap: [AppComponent]
 })

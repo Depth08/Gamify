@@ -7,6 +7,7 @@ import {GameService} from './../../services/game.service';
 import * as $ from 'jquery';
 import 'jqueryui';
 
+// TODO: Beacon id's are array indices
 @Component({
     selector: 'beacon',
     template: `
